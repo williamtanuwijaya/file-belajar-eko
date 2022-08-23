@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>String Template</title>
+</head>
+<body>
+  <script>
+
+    const name = "William Tanuwijaya";
+    const template = `Name : ${name}`;
+
+    console.info(template);
+
+    const nilai = 69;
+    const template2 = `Name: ${name}, Lulus : ${nilai > 70}`;
+
+    console.info(template2);
+
+    const multiline = `Nama Saya William,
+Sekarang Kerja
+dan kuliah
+pada saat ini saya sedang belajar.`
+
+    document.writeln("<pre>");
+    document.writeln(multiline);
+    document.write("</pre>");
+
+  </script>
+</body>
+</html>

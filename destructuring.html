@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring</title>
+</head>
+<body>
+<script>
+
+  {
+    const names = ["William", "Tanuwijaya", "Efraim", "Budi", "Joko"];
+    let [firstName, middleName, lastName, ...others] = names;
+
+    console.info(firstName);
+    console.info(middleName);
+    console.info(lastName);
+    console.info(others);
+  }
+
+  {
+    const person = {
+      firstName: "William",
+      lastName: "Tanuwijaya",
+      address: {
+        street: "Jalan Belum Ada",
+        city: "Jakarta",
+        country: "Indonesia"
+      },
+      hobby: "Game",
+      channel: "Progammer Zaman Now"
+    };
+    let {firstName, lastName, address:{city, street, country}, ...others} = person;
+    console.info(firstName);
+    console.info(lastName);
+    console.info(city);
+    console.info(street);
+    console.info(country);
+    console.info(others);
+  }
+
+  {
+    function displayPerson({firstName, middleName, lastName}){
+      console.info(firstName);
+      console.info(middleName);
+      console.info(lastName);
+    }
+
+    const person = {
+      firstName: "William",
+      middleName: "Tanuwijaya",
+      lastName: "Efraim",
+    };
+    displayPerson(person);
+  }
+
+  {
+    function sum([first, second]){
+      return first + second;
+    }
+
+    console.info(sum([1,1]));
+    console.info(sum([10,10]));
+  }
+
+  {
+    const names = ["William"];
+    const [firstName, middleName = "Tanuwijaya", lastName = "Efraim"] = names;
+
+    console.info(firstName);
+    console.info(middleName);
+    console.info(lastName);
+  }
+
+  {
+    const person = {
+      firstName: "William",
+      lastName: "Tanuwijaya"
+    };
+    let {firstName, middleName = "Efraim", lastName} = person;
+    console.info(firstName);
+    console.info(middleName);
+    console.info(lastName);
+  }
+
+  {
+    const person = {
+      firstName: "William",
+      lastName: "Tanuwijaya"
+    };
+    let {firstName: namaDepan,
+      middleName: namaTengah = "Efraim",
+      lastName: namaBelakang} = person;
+    console.info(namaDepan);
+    console.info(namaTengah);
+    console.info(namaBelakang);
+  }
+
+</script>
+</body>
+</html>
